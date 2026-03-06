@@ -22,6 +22,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+import sys
+import os
+# Ensure utils can be found
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from utils.ui import inject_css
+
+# Apply Global Enterprise Styling
+inject_css()
+
 # Cache functions for performance
 @st.cache_data
 def load_data():
